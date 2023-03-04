@@ -5,7 +5,8 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from logistic.models import Product, Stock, StockProduct
-from logistic.serializers import ProductSerializer, StockSerializer, ProductPositionSerializer
+from logistic.serializers import ProductSerializer,\
+    StockSerializer, ProductPositionSerializer
 
 
 class ProductViewSet(ModelViewSet):
@@ -23,9 +24,11 @@ class StockViewSet(ModelViewSet):
     filter_fields = ['products']
     # при необходимости добавьте параметры фильтрации
 
+
 class ProductPositionSet(ModelViewSet):
     queryset = StockProduct.objects.all()
     serializer_class = ProductPositionSerializer
+
 
 class TestView(APIView):
     def get(self, request):

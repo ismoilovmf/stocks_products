@@ -32,4 +32,4 @@ class ProductPositionSet(ModelViewSet):
 
 class TestView(APIView):
     def get(self, request):
-        return Response({"Message": "test"})
+        return Response({"Message": "text"})
